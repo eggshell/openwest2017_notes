@@ -96,3 +96,60 @@
 * [Source Code](http://www.benfillmore.com/RayCast)
 
 ## Building a Better Thermostat (Matthew Treinish)
+
+* What is a thermostat?
+    - Simple closed-loop controler device, 1 input from a temperature sensor,
+      1 output for controlling heating or A/C.
+
+* Constraints for controlling the AC:
+    - Can't take apart a window unit if you don't own it (i.e. included in rent).
+    - No identifying information for the AC unit.
+    - Wireless control is ideal.
+
+* Solution for controlling the AC:
+    - ZWave smart siwtch
+    - Control via power (relay to turn on/off).
+    - Measured current draw with clamp meter.
+
+* What is Z-Wave:
+    - Low power mesh network for sensors and devices.
+    - Licensed by Sigma Designs.
+    - Interoperability tested for all devices by Z-Wave Alliance.
+    - Software API and protocol docs in the public domain.
+    - Over 1700 certified devices.
+    - OpenZWave is an open source library in C/Python to interface with a
+      Z-Wave network.
+
+* Sensing the temperature:
+    - Wireless Z-Wave multi-sensor, leverages the Z-Wave network.
+    - Can sense light, motion, temperature, UV, humidity, etc.
+
+* Using Z-Wave:
+    - Setup a Z-Wave network with Aeotec Z-Stick.
+    - Register each device on the network.
+    - Leverage OpenZWave to provide an API to interact with devices.
+
+* Can use Home Assistant with these Z-Wave devices, provides a generic
+  thermostat component.
+
+* Issues:
+    - Requires writing a spearate rule for every condition.
+    - Some trigger rules were edge-triggered.
+    - Switching became unreliable.
+    - Adjusting the set point required a config update.
+
+* Speaker wrote DallasMQTT:
+    - Framework for polling sensors and pushing results on MQTT.
+    - Handles an arbitrary number of sensors.
+    - Written in Python.
+    - Currently only supports Dallas 1 wire temperature sensor.
+
+* Location tracking:
+    - Start writing rules based on location.
+    - Set temperature higher when not home.
+    - Pre-cool apartment when heading home.
+
+* Owntracks:
+    - Open Source iOS and Android app for reporting location over MQTT.
+    - Enables you to use either a private MQTT broker or public service.
+    - Home Assistant component available.
