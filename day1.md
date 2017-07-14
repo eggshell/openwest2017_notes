@@ -58,16 +58,15 @@
 * Explaining unit vs. integration tests and how CI works. Pretty rudimentary
   overview of TDD (not incredibly useful for me).
 
-* You should publish docs for your API wrapper (duh). Use something that will
-  translate comments to docs automagically (duh).
+* You should publish docs for your API wrapper (review). Use something that will
+  translate comments to docs automagically (review).
 
-* Use readthedocs (duh).
+* Use readthedocs (review).
 
-* Push to pypi (duh).
+* Push to pypi (review).
 
-**note**: `duh` in the above usage just means `I've already done this, but it's
-good to be teaching people about it and it is certainly important`. I couldn't
-think of a better, less condescending shorthand.
+**note**: `review` in the above usage just means `I've already done this, but
+it's good to be teaching people about it and it is certainly important`.
 
 ## Deploying a Baremetal Cloud is not Easy (Julia Kreger)
 
